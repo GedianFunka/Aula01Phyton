@@ -21,6 +21,9 @@ print("Exemplos de tipos de dados de Python\n")
 print("Idade = ", idade)
 print("Tipo: ", type(idade))
 
+print("\nNome: ", nome)
+print("Tipo: ", type(nome))
+
 print("\nAltura: ", altura)
 print("Tipo: ", type(altura))
 
