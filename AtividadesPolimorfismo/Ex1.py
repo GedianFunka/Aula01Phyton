@@ -20,7 +20,7 @@ class Trem(Transporte):
 def iniciar_viajem(Transporte):
     Transporte.viajar()
 
-transportes = [Aviao("GG"), Navio("KK"), Trem("WW")]
+transportes = [Aviao("GG"), Navio("KK"), Trem("WW"), Aviao("HH"), Navio("LL"), Trem("PP")]
 
 for transporte in transportes:
     iniciar_viajem(transporte)
