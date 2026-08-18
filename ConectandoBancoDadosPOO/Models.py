@@ -1,6 +1,3 @@
-from Exemplo01Py.Exemplo03 import quantidade
-
-
 class Produto:
     def __init__(self,nome, preco, quantidade, categoria):
         self.nome = nome
@@ -8,7 +5,7 @@ class Produto:
         self.quantidade = quantidade
         self.categoria = categoria
 
-    def comverter_tupla(self):
+    def converter_tupla(self):
         return (self.nome, self.preco, self.quantidade, self.categoria)
 
     @staticmethod
