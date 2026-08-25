@@ -33,7 +33,7 @@ def listar_produto():
         if conexao and conexao.is_connected():
             conexao.close()
 
-def buscar_produto():
+def buscar_produto(termo):
     conexao = None
     try:
         conexao = mysql.connector.connect(**DB_CONFIG)
