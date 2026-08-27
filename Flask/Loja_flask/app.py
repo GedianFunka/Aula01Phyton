@@ -10,11 +10,15 @@ def index():
 
 @app.route("/sobre")
 def sobre():
-    return "Está página é sobre."
+    return render_template("sobre.html")
 
 @app.route("/produtos")
 def produtos():
-    return render_template("produtos.html")
+    lista = [
+        {"nome": "Notebook", "preco":3499.00, "categoria":"Eletronicos"},
+        {"nome":"Capacete", "preco":159.99, "categoria":"Roupa"},
+    ]
+    return render_template("produtos.html", produtos = lista)
 
 @app.route("/produto/<int:id>")
 def produto(id):

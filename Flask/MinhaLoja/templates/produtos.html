@@ -1,0 +1,19 @@
+ <nav>
+     <a href="{{url_for('index')}}">Início</a>
+     <a href="{{url_for('produto_lista')}}">Produtos</a>
+     <a href="{{url_for('sobre')}}">Sobre</a>
+ </nav>
+<table border="1">
+    <tr>
+        <th>Nome</th>
+        <th>Preco</th>
+        <th>Categoria</th>
+    </tr>
+     {%for p in produtos %}
+    <tr>
+        <td>{{p.nome}}</td>
+        <td>R${{"%.2f"| format(p.preco)}}</td>
+        <td>{{p.categoria}}</td>
+    </tr>
+        {% endfor %}
+</table>
