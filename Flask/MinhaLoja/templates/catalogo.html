@@ -1,0 +1,39 @@
+<body>
+
+     <nav>
+        <a href="{{url_for('index')}}">Início</a>
+        <a href="{{url_for('catalogo')}}">Catálogo</a>
+        <a href="{{url_for('produto_lista')}}">Produtos</a>
+        <a href="{{url_for('sobre')}}">Sobre</a>
+    </nav>
+
+    <table border="1">
+    <tr>
+        <th>Id</th>
+        <th>Nome</th>
+        <th>Quantidade</th>
+        <th>Preco</th>
+        <th>Categoria</th>
+        <th>Acao</th>
+
+    </tr>
+     {%for p in produtos %}
+    <tr {%if p.quantidade == 0 %}
+            style="background-color: #FF0000FF;"
+        {%elif p.quantidade < 5 %}
+            style="background-color: #FFA500FF;"
+        {%else%}
+            style="background-color: #00FF00FF;"
+        {%endif%}>
+
+        <td>{{loop.index}}</td>
+        <td>{{p.nome}}</td>
+        <td>{{p.quantidade}}</td>
+        <td>R${{"%.2f"| format(p.preco)}}</td>
+        <td>{{p.categoria}}</td>
+        <td><a href="{{url_for('detalhe_produto', id = p.id)}}">Detalhes</a></td>
+    </tr>
+        {% endfor %}
+    </table>
+
+</body>
